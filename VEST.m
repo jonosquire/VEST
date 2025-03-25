@@ -916,7 +916,7 @@ setIndEqual[lhs_,expr_/;(Head[expr]=!=List)]:=Module[{flistname},
 Notation[
 	ParsedBoxWrapper[RowBox[{"lhs_", " ", OverscriptBox["=", "ind"], "expr_"}]] \
 	\[DoubleLongLeftRightArrow] ParsedBoxWrapper[RowBox[{"setIndEqual", "[", RowBox[{"lhs_", ",", "expr_"}], "]"}]]];
-AddInputAlias[ParsedBoxWrapper[OverscriptBox["=", "ind"]],"i="];
+AddInputAlias[ParsedBoxWrapper[OverscriptBox["=", "ind"]],"i=",EvaluationNotebook[]];
 
 
 
@@ -1414,10 +1414,10 @@ rankn[obj_,n_List]:=obj===0||Or@@(TrueQ@nFIndexQ[obj,#]&/@n)
 
 
 (*NOTATION FOR CROSS, DOT and GRAD*)
-AddInputAlias[ParsedBoxWrapper[OverscriptBox["\[Times]","\[RightVector]"]],"v*"];
-AddInputAlias[ParsedBoxWrapper[OverscriptBox[StyleBox["\[Bullet]",FontColor->Black],"\[RightVector]"]],"v."];
-AddInputAlias[ParsedBoxWrapper[OverscriptBox["\[Del]","\[RightVector]"]],"vg"];
-AddInputAlias[ParsedBoxWrapper[SubscriptBox[OverscriptBox["\[PartialD]","\[RightVector]"],"v"]],"vgv"];
+AddInputAlias[ParsedBoxWrapper[OverscriptBox["\[Times]","\[RightVector]"]],"v*",EvaluationNotebook[]];
+AddInputAlias[ParsedBoxWrapper[OverscriptBox[StyleBox["\[Bullet]",FontColor->Black],"\[RightVector]"]],"v.",EvaluationNotebook[]];
+AddInputAlias[ParsedBoxWrapper[OverscriptBox["\[Del]","\[RightVector]"]],"vg",EvaluationNotebook[]];
+AddInputAlias[ParsedBoxWrapper[SubscriptBox[OverscriptBox["\[PartialD]","\[RightVector]"],"v"]],"vgv",EvaluationNotebook[]];
 
 Notation[ParsedBoxWrapper[RowBox[{"o1_",OverscriptBox["\[Times]","\[RightVector]"],"o2_"}]] \[DoubleLongRightArrow] \
 	ParsedBoxWrapper[RowBox[{"cross", "[", RowBox[{"o1_", ",", "o2_"}], "]"}]]];
